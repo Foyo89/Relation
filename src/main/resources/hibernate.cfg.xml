@@ -44,11 +44,14 @@ Contributor(s):
     <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
     <property name="hibernate.connection.url">jdbc:mysql://localhost/relation?serverTimezone=CET</property>
     <property name="hibernate.connection.username">root</property>
-    <property name="hibernate.connection.password">root</property>
+    <property name="hibernate.connection.password"></property>
     <property name="hibernate.hbm2ddl.auto">create</property>
     <mapping class="com.mycompany.relation2.model.Customer"/>
     <mapping class="com.mycompany.relation2.model.Reservation"/>
     <mapping class="com.mycompany.relation2.model.Ship"/>
     <mapping class="com.mycompany.relation2.model.Cruise"/> 
+    <mapping class="com.mycompany.relation2.model.Vehicle"/>
+    <mapping class="com.mycompany.relation2.model.TwoWheeler"/>
+    <mapping class="com.mycompany.relation2.model.FourWheeler"/>
   </session-factory>
 </hibernate-configuration>
