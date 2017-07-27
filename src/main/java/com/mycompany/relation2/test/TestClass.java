@@ -45,47 +45,47 @@ public class TestClass {
 //    
 //        session.close();
 //        System.out.println("Test");
+//        
+//        
+        Vehicle v = new Vehicle();
         
-//        
-//        Vehicle v = new Vehicle();
-//        
-//        v.setName("Ford");
-//        v.setAddDate(new Date());
-//        
-//        
-//        SessionFactory instance = ConfigHibernate.getInstance();
-//        Session session = instance.openSession();
-//        Transaction transaction = session.beginTransaction();
-//        
-//           
-//        
-//        session.save(v);
-//        transaction.commit();
-//    
-//        session.close();
-//        
-//        
-//        Vehicle v1;
-//        
-//        session = instance.openSession();
-//        Query query = session.createQuery("from Vehicle Where name='Ford'");
-//        
-//        v1 = (Vehicle) query.uniqueResult();
-//        
-//        session.evict(v1);
-//        
-//        v1.setName("Toyota");
-//        v1.setEditDate(new Date());
-//        
-//        transaction = session.beginTransaction();
-//        session.save(v1);
-//        transaction.commit();
-//    
-//        session.close();
+        v.setName("Ford");
+        v.setAddDate(new Date());
         
-            SessionFactory instance = ConfigHibernate.getInstance();
-            Session session = instance.openSession();
-            Transaction transaction = session.beginTransaction();
+        
+        SessionFactory instance = ConfigHibernate.getInstance();
+        Session session = instance.openSession();
+        Transaction transaction = session.beginTransaction();
+        
+           
+        
+        session.save(v);
+        transaction.commit();
+    
+        session.close();
+        
+        
+        Vehicle v1;
+        
+        session = instance.openSession();
+        Query query = session.createQuery("from Vehicle Where name='Ford'");
+        
+        v1 = (Vehicle) query.uniqueResult();
+        
+        session.evict(v1);
+        
+        v1.setName("Toyota");
+        v1.setEditDate(new Date());
+        
+        transaction = session.beginTransaction();
+        session.save(v1);
+        transaction.commit();
+    
+        session.close();
+        
+            instance = ConfigHibernate.getInstance();
+            session = instance.openSession();
+            transaction = session.beginTransaction();
         
         
             FourWheeler fw = new FourWheeler();
@@ -108,8 +108,8 @@ public class TestClass {
             transaction.commit();
             
             
+        
         instance.close();
-        session.close();
         System.out.println("Test Done");
         
             

@@ -24,7 +24,7 @@ public abstract class Abstraction {
     
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.TABLE)
     protected Integer id;
     @Column
     protected Date addDate;

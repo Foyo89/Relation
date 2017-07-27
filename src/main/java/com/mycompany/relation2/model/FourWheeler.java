@@ -18,7 +18,7 @@ import javax.persistence.Table;
  * @author RENT
  */
 @Entity
-//@Table(name = "Four_wheelers")
+@Table(name = "Four_wheelers")
 public class FourWheeler extends Vehicle implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -29,13 +29,7 @@ public class FourWheeler extends Vehicle implements Serializable {
     @Column (name = "Steering_type")
     private String steeringType;
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
+ 
     
     
 
@@ -55,29 +49,6 @@ public class FourWheeler extends Vehicle implements Serializable {
 
     
 
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (getId() != null ? getId().hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof FourWheeler)) {
-            return false;
-        }
-        FourWheeler other = (FourWheeler) object;
-        if ((this.getId() == null && other.getId() != null) || (this.getId() != null && !this.getId().equals(other.getId()))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "com.mycompany.relation2.model.FourWheller[ id=" + getId() + " ]";
-    }
+    
     
 }

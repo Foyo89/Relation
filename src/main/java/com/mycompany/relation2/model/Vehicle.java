@@ -21,13 +21,13 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "vehicles")
-@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+@Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
 public class Vehicle extends Abstraction implements Serializable {
 
     private static final long serialVersionUID = 1L;
     
     @Column
-    private String name;
+    protected String name;
 
     public static long getSerialVersionUID() {
         return serialVersionUID;
@@ -45,29 +45,6 @@ public class Vehicle extends Abstraction implements Serializable {
     
   
     
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (getId() != null ? getId().hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Vehicle)) {
-            return false;
-        }
-        Vehicle other = (Vehicle) object;
-        if ((this.getId() == null && other.getId() != null) || (this.getId() != null && !this.getId().equals(other.getId()))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "com.mycompany.relation2.model.Vehicle[ id=" + getId() + " ]";
-    }
+   
     
 }
